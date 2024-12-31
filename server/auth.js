@@ -70,12 +70,15 @@ function login(req, res) {
 }
 
 function logout(req, res) {
+  const userSocket = socketManager.getSocketFromUserID(req.user._id);
+  if (userSocket) {
+    socketManager.removeUser(req.user, userSocket);
+  }
   req.session.user = null;
   res.send({});
 }
 
 function populateCurrentUser(req, res, next) {
-  // simply populate "req.user" for convenience
   req.user = req.session.user;
   next();
 }

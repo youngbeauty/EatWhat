@@ -17,6 +17,9 @@ const NavBar = ({ userId, handleLogin, handleLogout }) => {
         <Link to="/profile/" className="NavBar-link">
           Profile
         </Link>
+        <Link to="/chat/" className="NavBar-link">
+          Chat
+        </Link>
       </div>
       {userId ? (
         <button

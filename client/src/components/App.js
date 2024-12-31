@@ -5,14 +5,15 @@ import jwt_decode from "jwt-decode";
 
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
-
-import "../utilities.css";
+import Chatbook from "./pages/Chatbook.js";
 import NavBar from "./modules/NavBar.js";
-import { socket } from "../client-socket.js";
 
+import { socket } from "../client-socket.js";
 import { get, post } from "../utilities";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
+import "../utilities.css";
+import "./App.css";
 /**
  * Define the "App" component
  */
@@ -40,26 +41,31 @@ const App = () => {
 
   const handleLogout = () => {
     setUserId(undefined);
-    post("/api/logout");
+    post("/api/logout").then(() => {
+      console.log("Logged out successfully!");
+    });
   };
 
   return (
     <GoogleOAuthProvider clientId="597664842746-strmk2dfn8bpat9puhsn8d40u3r5tnjc.apps.googleusercontent.com">
       <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId}></NavBar>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Skeleton
-              path="/"
-              handleLogin={handleLogin}
-              handleLogout={handleLogout}
-              userId={userId}
-            />
-          }
-        />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <div className="App-container">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Skeleton
+                path="/"
+                handleLogin={handleLogin}
+                handleLogout={handleLogout}
+                userId={userId}
+              />
+            }
+          />
+          <Route path="/chat" element={<Chatbook userId={userId} />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
     </GoogleOAuthProvider>
   );
 };
