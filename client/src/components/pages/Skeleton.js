@@ -11,19 +11,6 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
   return (
     <div>
       <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
-        <NavBar></NavBar>
-        {userId ? (
-          <button
-            onClick={() => {
-              googleLogout();
-              handleLogout();
-            }}
-          >
-            Logout
-          </button>
-        ) : (
-          <GoogleLogin onSuccess={handleLogin} onError={(err) => console.log(err)} />
-        )}
         <h1>Good luck on your project :)</h1>
         <CardSwipe></CardSwipe>
       </GoogleOAuthProvider>

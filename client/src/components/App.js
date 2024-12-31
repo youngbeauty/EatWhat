@@ -7,7 +7,7 @@ import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 
 import "../utilities.css";
-
+import NavBar from "./modules/NavBar.js";
 import { socket } from "../client-socket.js";
 
 import { get, post } from "../utilities";
@@ -45,6 +45,7 @@ const App = () => {
 
   return (
     <GoogleOAuthProvider clientId="597664842746-strmk2dfn8bpat9puhsn8d40u3r5tnjc.apps.googleusercontent.com">
+      <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId}></NavBar>
       <Routes>
         <Route
           path="/"
