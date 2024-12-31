@@ -3,7 +3,7 @@ import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/goo
 import CardSwipe from "./CardSwipe";
 import "../../utilities.css";
 import "./Skeleton.css";
-import NavBar from "../modules/NavBar";
+
 //TODO: REPLACE WITH YOUR OWN CLIENT_ID
 const GOOGLE_CLIENT_ID = "597664842746-strmk2dfn8bpat9puhsn8d40u3r5tnjc.apps.googleusercontent.com";
 

@@ -2,8 +2,12 @@
   border: var(--darkgrey) 1px solid;
   border-radius: var(--xs);
   margin-top: var(--m);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 阴影增加立体感 */
+  transition: box-shadow 0.2s ease-in-out; /* 鼠标悬停时过渡效果 */
 }
-
+.Card-container:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
 .Card-container:first-of-type {
   margin-top: var(--l);
 }
@@ -11,15 +15,19 @@
 .Card-story,
 .Card-commentSection {
   padding: var(--m) var(--l);
+  background-color: var(--white); /* 背景颜色提升清爽感 */
+  border-radius: var(--xs); /* 圆角让内容区更柔和 */
 }
 
 .Card-storyUser {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
 }
 
 .Card-storyContent {
-  font-size: 40px;
+  font-size: 24px;
+  line-height: 1.5; /* 增加行间距，使内容更易读 */
+  color: var(--text-dark); /* 更深的文本颜色，提升可读性 */
   margin: var(--s) 0 0;
 }
 
@@ -30,4 +38,7 @@
 
 .Card-commentBody {
   margin: 0 0 var(--s);
+  font-size: 14px; /* 小一些的字体，区分评论和正文 */
+  line-height: 1.4; /* 行间距 */
+  color: var(--text-dark); /* 保持文本颜色统一 */
 }

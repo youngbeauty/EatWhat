@@ -8,6 +8,18 @@
 
 .Chat-historyContainer {
   flex-grow: 1;
+  padding: 10px;
+  max-height: 70vh;
   overflow-y: auto;
   overflow-x: hidden;
+}
+.Chat-historyContainer::-webkit-scrollbar {
+  width: 5px;
+}
+.Chat-historyContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 123, 255, 0.272);
+  border-radius: 4px;
+}
+.Chat-historyContainer::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
 }

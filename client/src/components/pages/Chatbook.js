@@ -110,7 +110,6 @@ const Chatbook = (props) => {
   return (
     <div>
       <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
-        <h1>Good luck :)</h1>
         <div className="u-flex u-relative Chatbook-container">
           <div className="Chatbook-userList">
             <ChatList

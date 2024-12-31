@@ -3,18 +3,20 @@
   font-family: "Open Sans";
   font-size: 14px;
   padding: var(--s) var(--m);
+  margin: var(--s);
 }
 
 .NewPostInput-input {
   flex-grow: 1;
-  border: var(--darkgrey) 1px solid;
-  border-radius: var(--xs) 0 0 var(--xs);
+  border: var(--darkgrey) 0.1px solid;
+  border-radius: 12px;
+  outline: none;
   transition: box-shadow 0.1s;
 }
 
 .NewPostInput-input:focus-within {
   border-color: var(--primary--dim);
-  box-shadow: 0 0 0 var(--xs) rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 var(--xs) rgba(0, 123, 255, 0.272);
 }
 
 .NewPostInput-button {
@@ -22,7 +24,8 @@
   border: var(--primary) 1px solid;
   border-radius: 0 var(--xs) var(--xs) 0;
   background: none;
-  transition: color 0.1s, background 0.1s;
+  border-radius: 12px;
+  transition: color 0.2s, background 0.2s;
 }
 
 .NewPostInput-button:hover {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from "@react-spring/web";
-import Card from "../modules/Card";
+import FoodCard from "../modules/FoodCard";
 import { get } from "../../utilities";
 import "./CardSwipe.css";
 import "../../utilities";
@@ -84,7 +84,7 @@ const CardSwipe = () => {
               opacity: opacity,
             }}
           >
-            <Card
+            <FoodCard
               name={foods[currentIndex].name}
               description={foods[currentIndex].description}
               image={foods[currentIndex].image}

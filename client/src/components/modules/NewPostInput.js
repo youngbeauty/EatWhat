@@ -41,7 +41,7 @@ const NewPostInput = (props) => {
         value="Submit"
         onClick={handleSubmit}
       >
-        Submit
+        Send
       </button>
     </div>
   );
@@ -97,6 +97,6 @@ const NewMessage = (props) => {
   };
 
   return <NewPostInput defaultText="New Message" onSubmit={sendMessage} />;
-}
+};
 
 export { NewComment, NewStory, NewMessage };
