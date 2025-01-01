@@ -3,7 +3,7 @@ import SingleMessage from "./SingleMessage.js";
 import { NewMessage } from "./NewPostInput.js";
 
 import "./Chat.css";
-
+import "../../index.css";
 /**
  * @typedef UserObject
  * @property {string} _id

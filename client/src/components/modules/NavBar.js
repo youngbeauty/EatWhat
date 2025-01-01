@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 import { Link, useNavigate } from "react-router-dom";
-
+import ThemeToggle from "../../ThemeToggle";
 import "./NavBar.css";
 const GOOGLE_CLIENT_ID = "597664842746-strmk2dfn8bpat9puhsn8d40u3r5tnjc.apps.googleusercontent.com";
 /**
@@ -37,6 +37,7 @@ const NavBar = (props) => {
       ) : (
         <GoogleLogin onSuccess={props.handleLogin} onError={(err) => console.log(err)} />
       )}
+      <ThemeToggle />
     </nav>
   );
 };

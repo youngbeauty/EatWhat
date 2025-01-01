@@ -1,33 +1,33 @@
-.Card-container {
+.FoodCard-container {
   border: var(--darkgrey) 1px solid;
   border-radius: var(--xs);
   margin-top: var(--m);
 }
 
-.Card-container:first-of-type {
+.FoodCard-container:first-of-type {
   margin-top: var(--l);
 }
 
-.Card-story,
-.Card-commentSection {
+.FoodCard-story,
+.FoodCard-commentSection {
   padding: var(--m) var(--l);
 }
 
-.Card-storyUser {
+.FoodCard-storyUser {
   font-size: 20px;
   font-weight: 600;
 }
 
-.Card-storyContent {
+.FoodCard-storyContent {
   font-size: 40px;
   margin: var(--s) 0 0;
 }
 
-.Card-commentSection {
+.FoodCard-commentSection {
   background-color: var(--grey);
   border-top: 1px solid var(--darkgrey);
 }
 
-.Card-commentBody {
+.FoodCard-commentBody {
   margin: 0 0 var(--s);
 }
