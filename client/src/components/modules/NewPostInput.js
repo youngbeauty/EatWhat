@@ -99,4 +99,14 @@ const NewMessage = (props) => {
   return <NewPostInput defaultText="New Message" onSubmit={sendMessage} />;
 };
 
+const NewChat = (props) => {
+  const sendToAi = (value) => {
+    const body = { recipient: props.recipient, content: value };
+    post("/api/message", body);
+  };
+
+  return <NewPostInput defaultText="New Message" onSubmit={sendToAi} />;
+};
+
 export { NewComment, NewStory, NewMessage };
+export default NewPostInput;

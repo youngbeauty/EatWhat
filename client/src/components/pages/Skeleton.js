@@ -10,7 +10,7 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
   return (
     <div>
       <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
-        <h1>Good luck on your project :)</h1>
+        <h2>Remember to eat well :)</h2>
         <CardSwipe></CardSwipe>
       </GoogleOAuthProvider>
     </div>

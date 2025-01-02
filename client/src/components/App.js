@@ -7,6 +7,7 @@ import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 import Chatbook from "./pages/Chatbook.js";
 import NavBar from "./modules/NavBar.js";
+import Ai from "./pages/Ai.js";
 import Profile from "./modules/Profile.js";
 import { socket } from "../client-socket.js";
 import { get, post } from "../utilities";
@@ -66,6 +67,7 @@ const App = () => {
           <Route path="/chat" element={<Chatbook userId={userId} />} />
           <Route path="/profile/:userId" element={<Profile userId={userId} />} />
           <Route path="/feed" element={<Feed userId={userId} />} />
+          <Route path="/ai" element={<Ai userId={userId} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

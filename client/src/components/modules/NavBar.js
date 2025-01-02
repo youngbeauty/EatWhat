@@ -24,6 +24,9 @@ const NavBar = (props) => {
         <Link to="/chat/" className="NavBar-link">
           Chat
         </Link>
+        <Link to="/ai/" className="NavBar-link">
+          TalkAI
+        </Link>
       </div>
       {props.userId ? (
         <button
