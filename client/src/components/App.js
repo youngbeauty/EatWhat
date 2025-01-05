@@ -20,8 +20,8 @@ import Feed from "./pages/Feed.js";
  * Define the "App" component
  */
 const App = () => {
-  const [userId, setUserId] = useState(undefined);
-
+  const [userId, setUserId] = useState("");
+  const [picuser, setPicuser] = useState({});
   useEffect(() => {
     get("/api/whoami").then((user) => {
       if (user._id) {
@@ -33,6 +33,7 @@ const App = () => {
 
   const handleLogin = (credentialResponse) => {
     const userToken = credentialResponse.credential;
+    setPicuser(credentialResponse);
     const decodedCredential = jwt_decode(userToken);
     console.log(`Logged in as ${decodedCredential.name}`);
     post("/api/login", { token: userToken }).then((user) => {
@@ -65,7 +66,7 @@ const App = () => {
             }
           />
           <Route path="/chat" element={<Chatbook userId={userId} />} />
-          <Route path="/profile/:userId" element={<Profile userId={userId} />} />
+          <Route path="/profile/:usersId" element={<Profile picuser={picuser} />} />
           <Route path="/feed" element={<Feed userId={userId} />} />
           <Route path="/ai" element={<Ai userId={userId} />} />
           <Route path="*" element={<NotFound />} />

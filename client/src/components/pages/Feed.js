@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../modules/Card.js";
 import { NewStory } from "../modules/NewPostInput.js";
-
+import { NewComment } from "../modules/NewPostInput.js";
 import { get } from "../../utilities";
 
 const Feed = (props) => {
@@ -32,8 +32,8 @@ const Feed = (props) => {
         _id={storyObj._id}
         creator_name={storyObj.creator_name}
         creator_id={storyObj.creator_id}
-        userId={props.userId}
         content={storyObj.content}
+        userId={storyObj.creator_id}
       />
     ));
   } else {

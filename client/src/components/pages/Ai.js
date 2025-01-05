@@ -3,8 +3,11 @@ import { useRef, useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import NewPostInput from "../modules/NewPostInput";
 import SingleAiMessage from "../modules/SingleAiMessage";
+import api from "../../../../env";
+
 const Ai = () => {
-  const genAI = new GoogleGenerativeAI("AIzaSyBCO5jFTl5tu0JIys2SzVmZOfTPXE-MW3w");
+  const apiKey = api.api;
+  const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
   const [aiReply, setAiReply] = useState("");
@@ -18,9 +21,13 @@ const Ai = () => {
 
       if (index >= responseText.length - 1) {
         clearInterval(interval);
-        setAiMessages((prevMessages) => [...prevMessages, {
-          type: "ai",
-          content: responseText}]);
+        setAiMessages((prevMessages) => [
+          ...prevMessages,
+          {
+            type: "ai",
+            content: responseText,
+          },
+        ]);
         setAiReply("");
       }
     }, 50);
@@ -29,9 +36,13 @@ const Ai = () => {
   const Reply = async (value) => {
     try {
       const prompt = value;
-      setAiMessages((prevMessages) => [...prevMessages, {
-        type: "user",
-        content: value}]);
+      setAiMessages((prevMessages) => [
+        ...prevMessages,
+        {
+          type: "user",
+          content: value,
+        },
+      ]);
       const result = await model.generateContent(prompt);
       const responseText = result.response.text();
 

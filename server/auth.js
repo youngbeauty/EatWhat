@@ -32,10 +32,16 @@ const client = new OAuth2Client({
 
 // accepts a login token from the frontend, and verifies that it's legit
 function verify(token) {
+  console.log("Starting token verification...");
+  console.log("Using proxy:", process.env.HTTPS_PROXY);
   return client
     .verifyIdToken({
       idToken: token,
       audience: CLIENT_ID,
+      requestOptions: {
+        agent: proxyAgent,
+        timeout: 10000, // 10 秒超时
+      },
     })
     .then((ticket) => ticket.getPayload());
 }

@@ -23,6 +23,11 @@ const router = express.Router();
 //initialize socket
 const socketManager = require("./server-socket");
 
+router.get("/user", (req, res) => {
+  User.findById(req.query.usersid).then((user) => {
+    res.send(user);
+  });
+});
 router.get("/stories", (req, res) => {
   // empty selector means get all documents
   Story.find({}).then((stories) => res.send(stories));
@@ -64,12 +69,6 @@ router.get("/whoami", (req, res) => {
   }
 
   res.send(req.user);
-});
-
-router.get("/user", (req, res) => {
-  User.findById(req.query.userid).then((user) => {
-    res.send(user);
-  });
 });
 
 router.post("/initsocket", (req, res) => {
